@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "name": "Comment",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "likes": {
+      "type": "integer",
+      "default": 0
+    },
+    "topics": {
+      "via": "comments",
+      "collection": "topics",
+      "dominant": true
+    }
+  }
+}

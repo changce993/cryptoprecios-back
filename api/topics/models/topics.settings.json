@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "topics",
+  "info": {
+    "name": "Topics",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "likes": {
+      "type": "integer",
+      "default": 0
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "comments": {
+      "collection": "comment",
+      "via": "topics"
+    }
+  }
+}
